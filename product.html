@@ -2,262 +2,243 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B7Store</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                },
-            },
-        };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/newsletter.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/single-product.css" />
+    <link rel="stylesheet" href="assets/css/product.css" />
 </head>
 
-<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
-    <section class="header-warning bg-black text-white text-center py-4 text-sm lg:text-base">
-        <div class="mobile lg:hidden">
-            <span class="font-semibold">FRETE GRÁTIS</span> para todo o Nordeste!
-        </div>
-        <div class="desktop hidden lg:block">
-            <span class="font-semibold">FRETE GRÁTIS</span> para todo o Nordeste nas compras acima de R$ 199,00.
-            <span class="font-semibold">APROVEITA!</span>
+<body>
+    <section class="header-warning">
+        <div class="mobile"><span>FRETE GRÁTIS</span> para todo o Nordeste!</div>
+        <div class="desktop"><span>FRETE GRÁTIS</span> para todo o Nordeste nas compras acima de R$ 199,00.
+            <span>APROVEITA!</span>
         </div>
     </section>
-    <header class="bg-white">
-        <div class="header-main mx-auto flex max-w-[1024px] items-center justify-between px-6 py-8">
-            <div class="header-left flex items-center">
-                <a class="logo mr-10" href="index.html">
-                    <img src="assets/images/ui/logo-black.png" alt="B7Store" class="h-9" />
+    <header>
+        <div class="header-main">
+            <div class="header-left">
+                <a class="logo" href="">
+                    <img src="assets/images/ui/logo-black.png" alt="B7Store" />
                 </a>
-                <ul class="hidden items-center gap-10 text-slate-600 lg:flex">
-                    <li><a href="produtos.html" class="hover:text-slate-900">Camisetas</a></li>
-                    <li><a href="produtos.html" class="hover:text-slate-900">Kits B7Web</a></li>
-                    <li><a href="produtos.html" class="hover:text-slate-900">Acessórios</a></li>
-                    <li><a href="produtos.html" class="hover:text-slate-900">Eletrônicos</a></li>
+                <ul>
+                    <li><a href="produtos.html">Camisetas</a></li>
+                    <li><a href="produtos.html">Kits B7Web</a></li>
+                    <li><a href="produtos.html">Acessórios</a></li>
+                    <li><a href="produtos.html">Eletrônicos</a></li>
                 </ul>
             </div>
-            <div class="header-right flex items-center gap-4">
-                <input class="search hidden h-12 w-44 rounded-xl border border-slate-300 px-4 text-slate-700 outline-none lg:block" type="text" placeholder="Pesquisa" />
-                <a href="login.html" class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 hover:bg-slate-100">
-                    <img src="assets/images/ui/user-line.png" alt="Usuário" class="h-6 w-6" />
+            <div class="header-right">
+                <input class="search" type="text" placeholder="Pesquisa" />
+                <a href="login.html" class="btn-icon">
+                    <img src="assets/images/ui/user-line.png" alt="" />
                 </a>
-                <a href="checkout.html" class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 hover:bg-slate-100">
-                    <img src="assets/images/ui/shopping-bag-4-line.png" alt="Sacola" class="h-6 w-6" />
+                <a href="checkout.html" class="btn-icon">
+                    <img src="assets/images/ui/shopping-bag-4-line.png" alt="" />
                 </a>
-                <button class="menu-burger inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 hover:bg-slate-100 lg:hidden">
-                    <img class="off h-6 w-6" src="assets/images/ui/menu-line.png" alt="Menu" />
-                    <img class="on hidden h-6 w-6" src="assets/images/ui/menu-line-white.png" alt="Fechar menu" />
-                </button>
+                <a class="btn-icon menu-burger">
+                    <img class="off" src="assets/images/ui/menu-line.png" alt="" />
+                    <img class="on" src="assets/images/ui/menu-line-white.png" alt="" />
+                </a>
             </div>
         </div>
-        <div class="header-menu hidden border-t border-slate-200 bg-white px-6 lg:flex lg:justify-center lg:gap-10 lg:border-none">
-            <a href="produtos.html" class="block border-b border-slate-200 py-4 text-slate-600 hover:text-slate-900 lg:border-none">Camisetas</a>
-            <a href="produtos.html" class="block border-b border-slate-200 py-4 text-slate-600 hover:text-slate-900 lg:border-none">Kits B7Web</a>
-            <a href="produtos.html" class="block border-b border-slate-200 py-4 text-slate-600 hover:text-slate-900 lg:border-none">Acessórios</a>
-            <a href="produtos.html" class="block border-b border-slate-200 py-4 text-slate-600 hover:text-slate-900 lg:border-none">Eletrônicos</a>
+        <div class="header-menu">
+            <a href="produtos.html">Camisetas</a>
+            <a href="produtos.html">Kits B7Web</a>
+            <a href="produtos.html">Acessórios</a>
+            <a href="produtos.html">Eletrônicos</a>
         </div>
-        <div class="header-search px-6 pb-6 lg:hidden">
-            <input class="search w-full h-12 rounded-xl border border-slate-300 px-4 text-slate-700 outline-none" type="text" placeholder="O que você procura?" />
+        <div class="header-search">
+            <input class="search" type="text" placeholder="O que você procura?" />
         </div>
     </header>
-    <main class="mx-auto max-w-[1024px] px-6 py-10">
-        <section class="breadcrumb mb-10 text-sm text-slate-500 lg:mb-8">Home > Camisetas > Node</section>
+    <main>
+        <section class="breadcrumb">Home > Camisetas > Node</section>
 
-        <section class="product flex flex-col gap-16 lg:flex-row lg:gap-24">
-            <div class="photo-area flex-1">
-                <div class="photo flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-10">
-                    <img src="assets/images/products/camiseta-html.png" alt="Camiseta Node JS" class="max-w-full" />
+        <section class="product">
+            <div class="photo-area">
+                <div class="photo">
+                    <img src="assets/images/products/camiseta-html.png" alt="" />
                 </div>
             </div>
-            
-            <div class="info flex-1">
-                <div class="id text-sm text-slate-500">CÓD: 0123</div>
-                <div class="name mt-4 text-4xl font-bold text-slate-900">Camiseta Node JS - Preta</div>
-                
-                <div class="size mt-6">
-                    <div class="text-base text-slate-600">Selecione o tamanho:</div>
-                    <div class="size-buttons mt-4 flex gap-4">
-                        <button class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 bg-white font-semibold hover:bg-slate-100">P</button>
-                        <button class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 bg-white font-semibold hover:bg-slate-100">M</button>
-                        <button class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 bg-white font-semibold hover:bg-slate-100">G</button>
-                        <button class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 bg-white font-semibold hover:bg-slate-100">GG</button>
+            <div class="info">
+                <div class="id">CÓD: 0123</div>
+                <div class="name">Camiseta Node JS - Preta</div>
+                <div class="size">
+                    <div>Selecione o tamanho:</div>
+                    <div class="size-buttons">
+                        <div class="btn-icon">P</div>
+                        <div class="btn-icon">M</div>
+                        <div class="btn-icon">G</div>
+                        <div class="btn-icon">GG</div>
                     </div>
                 </div>
-
-                <div class="price-from mt-6 text-lg text-slate-500">de <span class="line-through">R$ 89,99</span> por</div>
-                <div class="price-to text-5xl font-bold text-blue-600">R$ 59,99</div>
-                
-                <div class="payments mt-4 text-lg text-slate-500">Forma de pagamento via PIX</div>
-                
-                <div class="buttons mt-6 flex gap-4">
-                    <button class="button flex-1 rounded-xl bg-blue-600 py-4 text-base font-semibold text-white hover:bg-blue-700">Adicionar à sacola</button>
-                    <button class="inline-flex h-14 w-14 items-center justify-center rounded-xl border border-slate-300 bg-white hover:bg-slate-100">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="h-6 w-6" />
-                    </button>
-                    <button class="inline-flex h-14 w-14 items-center justify-center rounded-xl border border-slate-300 bg-white hover:bg-slate-100">
-                        <img src="assets/images/ui/share-line.png" alt="Compartilhar" class="h-6 w-6" />
-                    </button>
+                <div class="price-from">de <span>R$ 89,99</span> por</div>
+                <div class="price-to">R$ 59,99</div>
+                <div class="payments">Forma de pagamento via PIX</div>
+                <div class="buttons">
+                    <div class="button">Adicionar à sacola</div>
+                    <div class="btn-icon">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
+                    </div>
+                    <div class="btn-icon">
+                        <img src="assets/images/ui/share-line.png" alt="" />
+                    </div>
                 </div>
-
-                <div class="shipping mt-10 border-t border-slate-200 pt-10">
-                    <div class="text-base text-slate-600">Calcular frete e prazo:</div>
-                    <div class="shipping-input mt-4 flex gap-4">
-                        <input type="text" class="input flex-1 rounded-xl border border-slate-300 bg-white px-4 py-4 text-slate-700 outline-none" placeholder="Digite aqui o CEP" />
-                        <button class="button rounded-xl bg-blue-600 px-6 py-4 text-base font-semibold text-white hover:bg-blue-700">Calcular</button>
+                <div class="shipping">
+                    <div>Calcular frete e prazo:</div>
+                    <div class="shipping-input">
+                        <input type="text" class="input" placeholder="Digite aqui o CEP" />
+                        <div class="button">Calcular</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="description mt-16 rounded-2xl border border-slate-200 bg-white p-6">
-            <div class="desc-header flex items-center justify-between border-b border-slate-200 pb-6">
-                <div class="text-lg font-semibold text-slate-900">Informações do produto</div>
-                <button class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 bg-white">
-                    <img src="assets/images/ui/arrow-left-s-line.png" alt="Expandir" class="h-6 w-6" />
-                </button>
+        <section class="description">
+            <div class="desc-header">
+                <div>Informações do produto</div>
+                <div class="btn-icon">
+                    <img src="assets/images/ui/arrow-left-s-line.png" alt="" />
+                </div>
             </div>
-            <div class="desc-body mt-8 text-base text-slate-600">...</div>
+            <div class="desc-body">....</div>
         </section>
 
-        <section class="related mt-16">
-            <div class="related-title mb-8 text-3xl font-semibold text-slate-900">Você também vai gostar.</div>
-            <div class="related-grid grid gap-8 lg:grid-cols-4">
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
+        <section class="related">
+            <div class="related-title">Você também vai gostar.</div>
+            <div class="related-grid">
+
+                <div class="product-item">
+                    <a href="product.html">
+                        <div class="product-photo">
+                            <img src="assets/images/products/camiseta-css.png" alt="" />
                         </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
+                        <div class="product-name">Camisa CSS - Azul</div>
+                        <div class="product-price">R$ 59,90</div>
+                        <div class="product-info">Pagamento via PIX</div>
                     </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
+                    <div class="product-fav">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
                     </div>
                 </div>
-                
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
+                <div class="product-item">
+                    <a href="product.html">
+                        <div class="product-photo">
+                            <img src="assets/images/products/camiseta-css.png" alt="" />
                         </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
+                        <div class="product-name">Camisa CSS - Azul</div>
+                        <div class="product-price">R$ 59,90</div>
+                        <div class="product-info">Pagamento via PIX</div>
                     </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
+                    <div class="product-fav">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
                     </div>
                 </div>
-                
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
+                <div class="product-item">
+                    <a href="product.html">
+                        <div class="product-photo">
+                            <img src="assets/images/products/camiseta-css.png" alt="" />
                         </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
+                        <div class="product-name">Camisa CSS - Azul</div>
+                        <div class="product-price">R$ 59,90</div>
+                        <div class="product-info">Pagamento via PIX</div>
                     </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
+                    <div class="product-fav">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
                     </div>
                 </div>
-                
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
+                <div class="product-item">
+                    <a href="product.html">
+                        <div class="product-photo">
+                            <img src="assets/images/products/camiseta-css.png" alt="" />
                         </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
+                        <div class="product-name">Camisa CSS - Azul</div>
+                        <div class="product-price">R$ 59,90</div>
+                        <div class="product-info">Pagamento via PIX</div>
                     </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
+                    <div class="product-fav">
+                        <img src="assets/images/ui/heart-3-line.png" alt="" />
                     </div>
                 </div>
+
             </div>
         </section>
+
     </main>
-    <section class="newsletter border-t border-slate-200 bg-white">
-        <div class="news-area mx-auto flex max-w-[1024px] flex-col items-center justify-between gap-8 px-6 py-14 lg:flex-row">
-            <div class="news-left flex flex-col items-center text-center lg:flex-row lg:text-left lg:items-center">
-                <img src="assets/images/ui/mail-send-line.png" alt="Newsletter" class="mb-4 h-16 w-16 lg:mb-0 lg:mr-4" />
+    <section class="newsletter">
+        <div class="news-area">
+            <div class="news-left">
+                <img src="assets/images/ui/mail-send-line.png" alt="" />
                 <div>
-                    <h3 class="text-3xl font-semibold text-slate-900">Fique por dentro das promoções!</h3>
-                    <p class="mt-2 text-sm text-slate-500">Coloque seu e-mail e seja o primeiro a saber</p>
+                    <h3>Fique por dentro das promoções!</h3>
+                    <p>Coloque seu e-mail e seja o primeiro a saber</p>
                 </div>
             </div>
-            <div class="news-right flex w-full flex-col gap-4 sm:flex-row sm:items-center">
-                <input class="input w-full flex-1 rounded-xl border border-slate-300 px-4 py-4 text-slate-700 outline-none" type="text" placeholder="Qual seu e-mail?" />
-                <button class="button w-full rounded-xl bg-blue-600 py-4 px-8 text-base font-semibold text-white hover:bg-blue-700 sm:w-auto">Enviar</button>
+            <div class="news-right">
+                <input class="input" type="text" placeholder="Qual seu e-mail?" />
+                <button class="button">Enviar</button>
             </div>
         </div>
     </section>
-    <footer class="bg-black text-white">
-        <div class="footer-menu border-b border-white/20 px-6 py-12">
-            <div class="mx-auto flex max-w-[1024px] flex-col items-center gap-10 lg:flex-row lg:justify-between">
-                <a class="logo" href="index.html">
-                    <img src="assets/images/ui/logo-white.png" alt="B7Store" class="h-9" />
-                </a>
-                <ul class="flex flex-col items-center gap-6 text-lg lg:flex-row">
-                    <li><a href="produtos.html" class="hover:text-slate-300">Camisetas</a></li>
-                    <li><a href="produtos.html" class="hover:text-slate-300">Kits B7Web</a></li>
-                    <li><a href="produtos.html" class="hover:text-slate-300">Acessórios</a></li>
-                    <li><a href="produtos.html" class="hover:text-slate-300">Eletrônicos</a></li>
-                </ul>
-            </div>
+    <footer>
+        <div class="footer-menu">
+            <a class="logo" href="">
+                <img src="assets/images/ui/logo-white.png" alt="B7Store" />
+            </a>
+            <ul>
+                <li><a href="produtos.html">Camisetas</a></li>
+                <li><a href="produtos.html">Kits B7Web</a></li>
+                <li><a href="produtos.html">Acessórios</a></li>
+                <li><a href="produtos.html">Eletrônicos</a></li>
+            </ul>
         </div>
-        <div class="footer-contacts border-b border-white/20 px-6 py-12">
-            <div class="mx-auto flex max-w-[1024px] flex-col gap-10 lg:flex-row lg:justify-between">
-                <div class="contacts flex-1">
-                    <div class="footer-title mb-6 text-center text-xl font-semibold lg:text-left">Precisa de ajuda?</div>
-                    <div class="footer-icons flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-4">
-                        <a class="flex items-center gap-4 rounded-2xl border border-slate-300 px-6 py-4 text-white hover:border-white/50" href="mailto:b7store@email.com">
-                            <img src="assets/images/ui/mail-line.png" alt="Email" class="h-8 w-8" />
-                            <span>b7store@email.com</span>
-                        </a>
-                        <a class="flex items-center gap-4 rounded-2xl border border-slate-300 px-6 py-4 text-white hover:border-white/50" href="tel:(00)00000-0000">
-                            <img src="assets/images/ui/phone-line.png" alt="Telefone" class="h-8 w-8" />
-                            <span>(00) 00000-0000</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="social flex-1">
-                    <div class="footer-title mb-6 text-center text-xl font-semibold lg:text-left">Acompanhe nas redes sociais</div>
-                    <div class="footer-icons flex items-center justify-center gap-4 lg:justify-start">
-                        <a href="#" class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 bg-black hover:bg-slate-900">
-                            <img src="assets/images/ui/instagram-line.png" alt="Instagram" class="h-6 w-6" />
-                        </a>
-                        <a href="#" class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 bg-black hover:bg-slate-900">
-                            <img src="assets/images/ui/linkedin-line.png" alt="LinkedIn" class="h-6 w-6" />
-                        </a>
-                        <a href="#" class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 bg-black hover:bg-slate-900">
-                            <img src="assets/images/ui/facebook-line.png" alt="Facebook" class="h-6 w-6" />
-                        </a>
-                        <a href="#" class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 bg-black hover:bg-slate-900">
-                            <img src="assets/images/ui/twitter-x-fill.png" alt="Twitter" class="h-6 w-6" />
-                        </a>
-                    </div>
+        <div class="footer-contacts">
+            <div class="contacts">
+                <div class="footer-title">Precisa de ajuda?</div>
+                <div class="footer-icons">
+                    <a class="btn-icon-text" href="">
+                        <img src="assets/images/ui/mail-line.png" alt="" />
+                        <span>b7store@email.com</span>
+                    </a>
+                    <a class="btn-icon-text" href="">
+                        <img src="assets/images/ui/phone-line.png" alt="" />
+                        <span>(00) 00000-0000</span>
+                    </a>
                 </div>
             </div>
+            <div class="social">
+                <div class="footer-title">Acompanhe nas redes sociais</div>
+                <div class="footer-icons">
+
+                    <a href="" class="btn-icon">
+                        <img src="assets/images/ui/instagram-line.png" alt="" />
+                    </a>
+
+                    <a href="" class="btn-icon">
+                        <img src="assets/images/ui/linkedin-line.png" alt="" />
+                    </a>
+
+                    <a href="" class="btn-icon">
+                        <img src="assets/images/ui/facebook-line.png" alt="" />
+                    </a>
+
+                    <a href="" class="btn-icon">
+                        <img src="assets/images/ui/twitter-x-fill.png" alt="" />
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom px-6 py-12">
-            <div class="mx-auto flex max-w-[1024px] flex-col items-center gap-8 lg:flex-row lg:justify-between">
-                <div class="phrase text-center text-sm text-slate-300 lg:text-left">Se você leu isso aqui, saiba que está no caminho certo! Continue estudando e você chegará lá...</div>
-                <button class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 bg-black hover:bg-slate-900">
-                    <img src="assets/images/ui/arrow-up-line.png" alt="Topo" class="h-6 w-6" />
-                </button>
+        <div class="footer-bottom">
+            <div class="phrase">Se você leu isso aqui, saiba que está no caminho certo!<br />Continue estudando e você
+                chegará lá...</div>
+            <div class="btn-icon">
+                <img src="assets/images/ui/arrow-up-line.png" alt="" />
             </div>
         </div>
     </footer>

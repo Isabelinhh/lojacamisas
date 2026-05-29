@@ -2,89 +2,85 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B7Store</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                },
-            },
-        };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/newsletter.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/single-product.css" />
+    <link rel="stylesheet" href="assets/css/produtos.css" />
 </head>
 
-<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
-    <section class="header-warning bg-black text-white text-center py-4 text-sm lg:text-base">
-        <div class="mobile lg:hidden">
-            <span class="font-semibold">FRETE GRÁTIS</span> para todo o Nordeste!
-        </div>
-        <div class="desktop hidden lg:block">
-            <span class="font-semibold">FRETE GRÁTIS</span> para todo o Nordeste nas compras acima de R$ 199,00.
-            <span class="font-semibold">APROVEITA!</span>
+<body>
+    <section class="header-warning">
+        <div class="mobile"><span>FRETE GRÁTIS</span> para todo o Nordeste!</div>
+        <div class="desktop"><span>FRETE GRÁTIS</span> para todo o Nordeste nas compras acima de R$ 199,00.
+            <span>APROVEITA!</span>
         </div>
     </section>
-    <header class="bg-white">
-        <div class="header-main mx-auto flex max-w-[1024px] items-center justify-between px-6 py-8">
-            <div class="header-left flex items-center">
-                <a class="logo mr-10" href="index.html">
-                    <img src="assets/images/ui/logo-black.png" alt="B7Store" class="h-9" />
+    <header>
+        <div class="header-main">
+            <div class="header-left">
+                <a class="logo" href="index.html">
+                    <img src="assets/images/ui/logo-black.png" alt="B7Store" />
                 </a>
-                <ul class="hidden items-center gap-10 text-slate-600 lg:flex">
-                    <li><a href="produtos.html" class="hover:text-slate-900">Camisetas</a></li>
-                    <li><a href="produtos.html" class="hover:text-slate-900">Kits B7Web</a></li>
-                    <li><a href="produtos.html" class="hover:text-slate-900">Acessórios</a></li>
-                    <li><a href="produtos.html" class="hover:text-slate-900">Eletrônicos</a></li>
+                <ul>
+                    <li><a href="produtos.html">Camisetas</a></li>
+                    <li><a href="produtos.html">Kits B7Web</a></li>
+                    <li><a href="produtos.html">Acessórios</a></li>
+                    <li><a href="produtos.html">Eletrônicos</a></li>
+                    <li><a href="admin-cadastro.html" style="color: #ff4757; font-weight: bold;">+ Cadastrar Produto</a></li>
                 </ul>
             </div>
-            <div class="header-right flex items-center gap-4">
-                <input class="search hidden h-12 w-44 rounded-xl border border-slate-300 px-4 text-slate-700 outline-none lg:block" type="text" placeholder="Pesquisa" />
-                <a href="login.html" class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 hover:bg-slate-100">
-                    <img src="assets/images/ui/user-line.png" alt="Usuário" class="h-6 w-6" />
+            <div class="header-right">
+                <input class="search" type="text" placeholder="Pesquisa" />
+                <a href="login.html" class="btn-icon">
+                    <img src="assets/images/ui/user-line.png" alt="" />
                 </a>
-                <a href="checkout.html" class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 hover:bg-slate-100">
-                    <img src="assets/images/ui/shopping-bag-4-line.png" alt="Sacola" class="h-6 w-6" />
+                <a href="checkout.html" class="btn-icon">
+                    <img src="assets/images/ui/shopping-bag-4-line.png" alt="" />
                 </a>
-                <button class="menu-burger inline-flex h-12 w-12 items-center justify-center rounded-xl border border-slate-300 hover:bg-slate-100 lg:hidden">
-                    <img class="off h-6 w-6" src="assets/images/ui/menu-line.png" alt="Menu" />
-                    <img class="on hidden h-6 w-6" src="assets/images/ui/menu-line-white.png" alt="Fechar menu" />
-                </button>
+                <a class="btn-icon menu-burger">
+                    <img class="off" src="assets/images/ui/menu-line.png" alt="" />
+                    <img class="on" src="assets/images/ui/menu-line-white.png" alt="" />
+                </a>
             </div>
         </div>
-        <div class="header-menu hidden border-t border-slate-200 bg-white px-6 lg:flex lg:justify-center lg:gap-10 lg:border-none">
-            <a href="produtos.html" class="block border-b border-slate-200 py-4 text-slate-600 hover:text-slate-900 lg:border-none">Camisetas</a>
-            <a href="produtos.html" class="block border-b border-slate-200 py-4 text-slate-600 hover:text-slate-900 lg:border-none">Kits B7Web</a>
-            <a href="produtos.html" class="block border-b border-slate-200 py-4 text-slate-600 hover:text-slate-900 lg:border-none">Acessórios</a>
-            <a href="produtos.html" class="block border-b border-slate-200 py-4 text-slate-600 hover:text-slate-900 lg:border-none">Eletrônicos</a>
+        <div class="header-menu">
+            <a href="produtos.html">Camisetas</a>
+            <a href="produtos.html">Kits B7Web</a>
+            <a href="produtos.html">Acessórios</a>
+            <a href="produtos.html">Eletrônicos</a>
+            <a href="admin-cadastro.html" style="color: #ff4757; font-weight: bold;">Cadastrar Produto</a>
         </div>
-        <div class="header-search px-6 pb-6 lg:hidden">
-            <input class="search w-full h-12 rounded-xl border border-slate-300 px-4 text-slate-700 outline-none" type="text" placeholder="O que você procura?" />
+        <div class="header-search">
+            <input class="search" type="text" placeholder="O que você procura?" />
         </div>
     </header>
-    <main class="mx-auto max-w-[1024px] px-6 py-10">
-        <section class="info mb-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <div class="product-qt text-2xl font-bold text-slate-900"><span>12</span> Produtos</div>
-            <div class="top-buttons flex gap-4 md:hidden">
-                <button class="top-button flex-1 flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-4 text-slate-600 hover:bg-slate-50" data-name="order">
-                    <span class="flex-1 text-left text-base">Ordenar</span>
-                    <img src="assets/images/ui/arrow-up-down-line.png" alt="" class="h-5 w-5" />
-                </button>
-                <button class="top-button flex-1 flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-4 text-slate-600 hover:bg-slate-50" data-name="filter">
-                    <span class="flex-1 text-left text-base">Filtrar</span>
-                    <img src="assets/images/ui/equalizer-2-line.png" alt="" class="h-5 w-5" />
-                </button>
+    <main>
+        <section class="breadcrumb">Home > Camisetas</section>
+
+        <section class="info">
+            <div class="product-qt"><span>0</span> Produtos</div>
+            <div class="top-buttons">
+                <div class="top-button" data-name="order">
+                    <div class="top-button-name">Ordenar</div>
+                    <div class="top-button-icon">
+                        <img src="assets/images/ui/arrow-up-down-line.png" alt="" />
+                    </div>
+                </div>
+                <div class="top-button" data-name="filter">
+                    <div class="top-button-name">Filtrar</div>
+                    <div class="top-button-icon">
+                        <img src="assets/images/ui/equalizer-2-line.png" alt="" />
+                    </div>
+                </div>
             </div>
-            <div class="order-area hidden md:block">
-                <label for="order" class="block text-sm text-slate-600 mb-2">Ordenar por</label>
-                <select id="order" name="order" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-700 outline-none hover:border-slate-400">
+            <div class="order-area">
+                <label for="order">Ordenar por</label>
+                <select id="order" name="order">
                     <option value="price">Por preço</option>
                     <option value="bestselling">Por mais vendidos</option>
                     <option value="alpha">Por ordem alfabética</option>
@@ -92,284 +88,161 @@
             </div>
         </section>
 
-        <section class="products flex flex-col gap-10 lg:flex-row lg:gap-8">
-            <div class="filters hidden lg:block lg:w-64">
-                <div class="filter mb-8">
-                    <div class="filter-header flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
-                        <div class="filter-name text-lg font-bold text-slate-900">Tecnologia</div>
-                        <button class="filter-icon">
-                            <img src="assets/images/ui/arrow-left-s-line.png" alt="" class="h-5 w-5" />
-                        </button>
+        <section class="products">
+            <div class="filters">
+
+                <div class="filter">
+                    <div class="filter-header">
+                        <div class="filter-name">Tecnologia</div>
+                        <img class="filter-icon" src="assets/images/ui/arrow-left-s-line.png" alt="" />
                     </div>
-                    <div class="filter-body space-y-4">
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="rn" class="h-5 w-5 rounded" />
+                    <div class="filter-body">
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="rn" />
                             <span>React Native</span>
                         </label>
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="node" class="h-5 w-5 rounded" />
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="node" />
                             <span>Node</span>
                         </label>
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="laravel" class="h-5 w-5 rounded" />
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="laravel" />
                             <span>Laravel</span>
                         </label>
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="react" class="h-5 w-5 rounded" />
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="react" />
                             <span>React</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="filter mb-8">
-                    <div class="filter-header flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
-                        <div class="filter-name text-lg font-bold text-slate-900">Tecnologia</div>
-                        <button class="filter-icon">
-                            <img src="assets/images/ui/arrow-left-s-line.png" alt="" class="h-5 w-5" />
-                        </button>
+                <div class="filter">
+                    <div class="filter-header">
+                        <div class="filter-name">Tecnologia</div>
+                        <img class="filter-icon" src="assets/images/ui/arrow-left-s-line.png" alt="" />
                     </div>
-                    <div class="filter-body space-y-4">
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="rn" class="h-5 w-5 rounded" />
+                    <div class="filter-body">
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="rn" />
                             <span>React Native</span>
                         </label>
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="node" class="h-5 w-5 rounded" />
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="node" />
                             <span>Node</span>
                         </label>
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="laravel" class="h-5 w-5 rounded" />
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="laravel" />
                             <span>Laravel</span>
                         </label>
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="react" class="h-5 w-5 rounded" />
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="react" />
                             <span>React</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="filter mb-8">
-                    <div class="filter-header flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
-                        <div class="filter-name text-lg font-bold text-slate-900">Tecnologia</div>
-                        <button class="filter-icon">
-                            <img src="assets/images/ui/arrow-left-s-line.png" alt="" class="h-5 w-5" />
-                        </button>
+                <div class="filter">
+                    <div class="filter-header">
+                        <div class="filter-name">Tecnologia</div>
+                        <img class="filter-icon" src="assets/images/ui/arrow-left-s-line.png" alt="" />
                     </div>
-                    <div class="filter-body space-y-4">
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="rn" class="h-5 w-5 rounded" />
+                    <div class="filter-body">
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="rn" />
                             <span>React Native</span>
                         </label>
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="node" class="h-5 w-5 rounded" />
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="node" />
                             <span>Node</span>
                         </label>
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="laravel" class="h-5 w-5 rounded" />
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="laravel" />
                             <span>Laravel</span>
                         </label>
-                        <label class="filter-option flex items-center gap-3 text-base text-slate-600 cursor-pointer">
-                            <input type="checkbox" name="tecnologia" value="react" class="h-5 w-5 rounded" />
+                        <label class="filter-option">
+                            <input type="checkbox" name="tecnologia" value="react" />
                             <span>React</span>
                         </label>
                     </div>
                 </div>
+
             </div>
-
-            <div class="grid flex-1 grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
-                        </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
-                    </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
-                    </div>
-                </div>
-
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
-                        </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
-                    </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
-                    </div>
-                </div>
-
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
-                        </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
-                    </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
-                    </div>
-                </div>
-
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
-                        </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
-                    </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
-                    </div>
-                </div>
-
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
-                        </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
-                    </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
-                    </div>
-                </div>
-
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
-                        </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
-                    </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
-                    </div>
-                </div>
-
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
-                        </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
-                    </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
-                    </div>
-                </div>
-
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
-                        </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
-                    </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
-                    </div>
-                </div>
-
-                <div class="product-item relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
-                    <a href="product.html" class="block">
-                        <div class="product-photo overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <img src="assets/images/products/camiseta-css.png" alt="Camisa CSS Azul" class="w-full" />
-                        </div>
-                        <div class="product-name mt-5 text-lg font-semibold text-slate-900">Camisa CSS - Azul</div>
-                        <div class="product-price mt-2 text-xl font-bold text-blue-600">R$ 59,90</div>
-                        <div class="product-info mt-2 text-sm text-slate-500">Pagamento via PIX</div>
-                    </a>
-                    <div class="product-fav absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
-                        <img src="assets/images/ui/heart-3-line.png" alt="Favoritar" class="w-5 h-5" />
-                    </div>
-                </div>
-            </div>
+            
+            <div class="grid products-grid"></div>
         </section>
-    </main>
 
-    <section class="newsletter border-t border-slate-200 bg-white py-16">
-        <div class="mx-auto max-w-[1024px] px-6">
-            <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-                <div class="newsletter-content max-w-md">
-                    <div class="newsletter-title text-3xl font-bold text-slate-900 mb-3">Fique por dentro</div>
-                    <div class="newsletter-text text-base text-slate-600">De nossas novidades e promoções!</div>
+    </main>
+    <section class="newsletter">
+        <div class="news-area">
+            <div class="news-left">
+                <img src="assets/images/ui/mail-send-line.png" alt="" />
+                <div>
+                    <h3>Fique por dentro das promoções!</h3>
+                    <p>Coloque seu e-mail e seja o primeiro a saber</p>
                 </div>
-                <form class="newsletter-form flex flex-col gap-3 sm:flex-row sm:gap-0">
-                    <input type="email" placeholder="Digite seu melhor email" class="flex-1 rounded-l-xl border border-slate-300 bg-white px-6 py-4 text-base text-slate-700 outline-none placeholder-slate-400 sm:rounded-none" />
-                    <button type="submit" class="rounded-r-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white hover:bg-blue-700 sm:rounded-none">Inscrever</button>
-                </form>
+            </div>
+            <div class="news-right">
+                <input class="input" type="text" placeholder="Qual seu e-mail?" />
+                <button class="button">Enviar</button>
             </div>
         </div>
     </section>
-
-    <footer class="bg-black text-white py-12">
-        <div class="mx-auto max-w-[1024px] px-6">
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-4 mb-12">
-                <div class="footer-col">
-                    <div class="footer-title mb-4 text-lg font-bold">Institucional</div>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-slate-400 hover:text-white transition">Sobre nós</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-white transition">Trabalhe conosco</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-white transition">Imprensa</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <div class="footer-title mb-4 text-lg font-bold">Suporte</div>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-slate-400 hover:text-white transition">Minha Conta</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-white transition">Meus Pedidos</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-white transition">Trocas e Devoluções</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <div class="footer-title mb-4 text-lg font-bold">Politica</div>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-slate-400 hover:text-white transition">Privacidade</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-white transition">Termos de Uso</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-white transition">Fale Conosco</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <div class="footer-title mb-4 text-lg font-bold">Contato</div>
-                    <ul class="space-y-3">
-                        <li><a href="tel:1133334444" class="text-slate-400 hover:text-white transition">(11) 3333-4444</a></li>
-                        <li><a href="mailto:contato@devstore.com.br" class="text-slate-400 hover:text-white transition">contato@devstore.com.br</a></li>
-                        <li class="flex gap-3 pt-2">
-                            <a href="#" class="text-slate-400 hover:text-white transition"><img src="assets/images/ui/instagram-line.png" alt="Instagram" class="h-6 w-6" /></a>
-                            <a href="#" class="text-slate-400 hover:text-white transition"><img src="assets/images/ui/facebook-circle-line.png" alt="Facebook" class="h-6 w-6" /></a>
-                            <a href="#" class="text-slate-400 hover:text-white transition"><img src="assets/images/ui/youtube-line.png" alt="YouTube" class="h-6 w-6" /></a>
-                        </li>
-                    </ul>
+    <footer>
+        <div class="footer-menu">
+            <a class="logo" href="index.html">
+                <img src="assets/images/ui/logo-white.png" alt="B7Store" />
+            </a>
+            <ul>
+                <li><a href="produtos.html">Camisetas</a></li>
+                <li><a href="produtos.html">Kits B7Web</a></li>
+                <li><a href="produtos.html">Acessórios</a></li>
+                <li><a href="produtos.html">Eletrônicos</a></li>
+            </ul>
+        </div>
+        <div class="footer-contacts">
+            <div class="contacts">
+                <div class="footer-title">Precisa de ajuda?</div>
+                <div class="footer-icons">
+                    <a class="btn-icon-text" href="">
+                        <img src="assets/images/ui/mail-line.png" alt="" />
+                        <span>b7store@email.com</span>
+                    </a>
+                    <a class="btn-icon-text" href="">
+                        <img src="assets/images/ui/phone-line.png" alt="" />
+                        <span>(00) 00000-0000</span>
+                    </a>
                 </div>
             </div>
-            <div class="border-t border-slate-800 pt-6">
-                <div class="text-center text-sm text-slate-400">© 2024 DevStore. Todos os direitos reservados.</div>
+            <div class="social">
+                <div class="footer-title">Acompanhe nas redes sociais</div>
+                <div class="footer-icons">
+                    <a href="" class="btn-icon">
+                        <img src="assets/images/ui/instagram-line.png" alt="" />
+                    </a>
+                    <a href="" class="btn-icon">
+                        <img src="assets/images/ui/linkedin-line.png" alt="" />
+                    </a>
+                    <a href="" class="btn-icon">
+                        <img src="assets/images/ui/facebook-line.png" alt="" />
+                    </a>
+                    <a href="" class="btn-icon">
+                        <img src="assets/images/ui/twitter-x-fill.png" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="phrase">Se você leu isso aqui, saiba que está no caminho certo!<br />Continue estudando e você chegará lá...</div>
+            <div class="btn-icon">
+                <img src="assets/images/ui/arrow-up-line.png" alt="" />
             </div>
         </div>
     </footer>
 
-    <script src="assets/js/header.js"></script>
-    <script src="assets/js/footer.js"></script>
-    <script src="assets/js/produtos.js"></script>
+    <script type="text/javascript" src="assets/js/header.js"></script>
+    <script type="text/javascript" src="assets/js/footer.js"></script>
+    <script type="text/javascript" src="assets/js/config.js"></script>
+    <script type="text/javascript" src="assets/js/produtos.js"></script>
 </body>
 
 </html>

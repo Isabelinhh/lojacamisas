@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B7Store - Login</title>
+    <title>B7Store - Cadastro de Produtos</title>
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/header.css" />
     <link rel="stylesheet" href="assets/css/newsletter.css" />
@@ -12,67 +12,42 @@
     <link rel="stylesheet" href="assets/css/produtos.css" />
     
     <style>
-        .login-wrapper {
-            padding: 60px 15px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            background-color: #fcfcfc;
-            min-height: 60vh;
-        }
-        .login-container {
-            max-width: 500px;
+        .cadastro-container {
+            max-width: 650px;
             width: 100%;
+            margin: 40px auto;
             padding: 40px;
             background: #ffffff;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             border: 1px solid #f0f0f0;
-            box-sizing: border-box;
         }
-        .login-header {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        .login-title {
+        .cadastro-title {
             font-size: 28px;
             font-weight: 800;
             color: #111111;
             margin-bottom: 8px;
+            text-align: center;
             letter-spacing: -0.5px;
         }
-        .login-subtitle {
+        .cadastro-subtitle {
             font-size: 14px;
             color: #777777;
-        }
-        .error-box {
-            background-color: #fef2f2;
-            border: 1px solid #fee2e2;
-            color: #991b1b;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 24px;
             text-align: center;
-        }
-        /* Nova caixa de sucesso para o aviso */
-        .success-box {
-            background-color: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            color: #166534;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-        .hidden {
-            display: none !important;
+            margin-bottom: 32px;
         }
         .form-group {
             margin-bottom: 20px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1px 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         .form-label {
             display: block;
@@ -81,9 +56,9 @@
             color: #333333;
             margin-bottom: 8px;
         }
-        .form-input {
+        .form-input, .form-select, .form-textarea {
             width: 100%;
-            padding: 14px 16px;
+            padding: 12px 16px;
             border: 1px solid #dddddd;
             border-radius: 8px;
             font-size: 15px;
@@ -92,43 +67,17 @@
             transition: all 0.2s ease;
             box-sizing: border-box;
         }
-        .form-input:focus {
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
             outline: none;
             border-color: #111111;
             background-color: #ffffff;
             box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
         }
-        .form-options {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 14px;
-            margin-bottom: 28px;
+        .form-textarea {
+            resize: none;
+            height: 110px;
         }
-        .remember-me-label {
-            display: flex;
-            align-items: center;
-            color: #555555;
-            cursor: pointer;
-            user-select: none;
-        }
-        .remember-me-checkbox {
-            margin-right: 8px;
-            width: 16px;
-            height: 16px;
-            accent-color: #111111;
-            cursor: pointer;
-        }
-        .forgot-password {
-            color: #555555;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .forgot-password:hover {
-            color: #111111;
-            text-decoration: underline;
-        }
-        .btn-login {
+        .btn-submit {
             display: block;
             width: 100%;
             padding: 15px;
@@ -140,12 +89,16 @@
             font-weight: 700;
             cursor: pointer;
             transition: background-color 0.2s ease;
+            margin-top: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            text-decoration: none;
         }
-        .btn-login:hover {
+        .btn-submit:hover {
             background-color: #2c2c2c;
+        }
+        .btn-submit:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            box-shadow: none;
         }
     </style>
 </head>
@@ -169,12 +122,12 @@
                     <li><a href="produtos.html">Kits B7Web</a></li>
                     <li><a href="produtos.html">Acessórios</a></li>
                     <li><a href="produtos.html">Eletrônicos</a></li>
-                    <li><a href="admin-cadastro.html" style="color: #ff4757; font-weight: bold;">+ Cadastrar Produto</a></li>
+                    <li><a href="cadastrar-produto.html" style="color: #ff4757; font-weight: bold;">+ Cadastrar Produto</a></li>
                 </ul>
             </div>
             <div class="header-right">
                 <input class="search" type="text" placeholder="Pesquisa" />
-                <a href="index.html" class="btn-icon">
+                <a href="login.html" class="btn-icon">
                     <img src="assets/images/ui/user-line.png" alt="" />
                 </a>
                 <a href="checkout.html" class="btn-icon">
@@ -191,69 +144,60 @@
             <a href="produtos.html">Kits B7Web</a>
             <a href="produtos.html">Acessórios</a>
             <a href="produtos.html">Eletrônicos</a>
-            <a href="admin-cadastro.html" style="color: #ff4757; font-weight: bold;">Cadastrar Produto</a>
+            <a href="cadastrar-produto.html" style="color: #ff4757; font-weight: bold;">Cadastrar Produto</a>
         </div>
         <div class="header-search">
             <input class="search" type="text" placeholder="O que você procura?" />
         </div>
     </header>
 
-    <main class="login-wrapper">
-        <div class="login-container">
-            <div class="login-header">
-                <h1 class="login-title">Acessar sua conta</h1>
-                <p class="login-subtitle">Bem-vindo de volta à B7Store!</p>
+    <main style="padding: 20px 15px; display: flex; align-items: center; justify-content: center; background-color: #fcfcfc;">
+        <div class="cadastro-container">
+            <div class="mb-8 text-center">
+                <h1 class="cadastro-title">Cadastrar Novo Produto</h1>
+                <p class="cadastro-subtitle">Preencha as informações abaixo para publicar o produto diretamente no banco de dados.</p>
             </div>
 
-            <div id="error-box" class="error-box hidden">
-                E-mail ou senha incorretos. Por favor, tente novamente.
-            </div>
-
-            <div id="success-box" class="success-box hidden">
-                ✓ Login confirmado! Redirecionando...
-            </div>
-
-            <form id="loginForm" onsubmit="fazerLoginFake(event)">
+            <form id="formCadastro">
                 <div class="form-group">
-                    <label for="email" class="form-label">E-mail</label>
-                    <input id="email" name="email" type="email" required class="form-input" placeholder="seu-email@exemplo.com">
+                    <label for="nome" class="form-label">Nome do Produto</label>
+                    <input type="text" id="nome" required class="form-input" placeholder="Ex: Camiseta B7Web Fullstack">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="preco" class="form-label">Preço (R$)</label>
+                        <input type="text" id="preco" required class="form-input" placeholder="Ex: 89,90">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria" class="form-label">Categoria</label>
+                        <select id="categoria" required class="form-select">
+                            <option value="">Selecione...</option>
+                            <option value="Camisetas">Camisetas</option>
+                            <option value="Kits B7Web">Kits B7Web</option>
+                            <option value="Acessórios">Acessórios</option>
+                            <option value="Eletrônicos">Eletrônicos</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="password" class="form-label">Senha</label>
-                    <input id="password" name="password" type="password" required class="form-input" placeholder="••••••••">
+                    <label for="imagem_url" class="form-label">URL da Imagem</label>
+                    <input type="url" id="imagem_url" class="form-input" placeholder="https://exemplo.com/imagem.png">
                 </div>
 
-                <div class="form-options">
-                    <label for="remember-me" class="remember-me-label">
-                        <input id="remember-me" name="remember-me" type="checkbox" class="remember-me-checkbox">
-                        Lembrar de mim
-                    </label>
-                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                <div class="form-group">
+                    <label for="descricao" class="form-label">Descrição do Produto</label>
+                    <textarea id="descricao" class="form-textarea" placeholder="Escreva detalhes sobre o material, tamanho, diferenciais..."></textarea>
                 </div>
 
-                <button type="submit" id="btn-entrar" class="btn-login">
-                    Entrar
+                <button type="submit" id="btnSubmit" class="btn-submit">
+                    Salvar Produto no Supabase
                 </button>
             </form>
         </div>
     </main>
-
-    <section class="newsletter">
-        <div class="news-area">
-            <div class="news-left">
-                <img src="assets/images/ui/mail-send-line.png" alt="" />
-                <div>
-                    <h3>Fique por dentro das promoções!</h3>
-                    <p>Coloque seu e-mail e seja o primeiro a saber</p>
-                </div>
-            </div>
-            <div class="news-right">
-                <input class="input" type="text" placeholder="Qual seu e-mail?" />
-                <button class="button">Enviar</button>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="footer-menu">
@@ -307,29 +251,9 @@
         </div>
     </footer>
 
-    <script>
-        function fazerLoginFake(event) {
-            event.preventDefault(); // Impede a página de recarregar direto
-            
-            const successBox = document.getElementById('success-box');
-            const btnEntrar = document.getElementById('btn-entrar');
-            
-            // 1. Mostra a mensagem verde de sucesso
-            successBox.classList.remove('hidden');
-            
-            // 2. Muda o texto do botão e desativa para um efeito legal
-            btnEntrar.textContent = "Carregando...";
-            btnEntrar.disabled = true;
-            
-            // 3. Espera 1.5 segundos (1500 milissegundos) e vai para o index.html
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 1500);
-        }
-    </script>
-
     <script type="text/javascript" src="assets/js/header.js"></script>
     <script type="text/javascript" src="assets/js/footer.js"></script>
+    <script type="text/javascript" src="assets/js/admin-cadastro.js"></script>
 </body>
 
 </html>
