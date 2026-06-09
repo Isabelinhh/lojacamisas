@@ -743,6 +743,84 @@
     if (val < 1) val = 1;
     display.textContent = val;
   }
+
+  // URL da sua API na Vercel
+const API_URL = 'https://lojacamisasbackend-euf4.vercel.app/api/produtos';
+
+// Função que busca os produtos do backend e renderiza na tela
+async function carregarProdutosDoBackend() {
+  const gridProdutos = document.getElementById('grid-produtos');
+  
+  if (!gridProdutos) return; // Garante que o elemento existe na tela atual
+
+  // Exibe uma mensagem de carregamento opcional
+  gridProdutos.innerHTML = '<p class="col-span-full text-center text-gray-500 py-10">Carregando camisas...</p>';
+
+  try {
+    const response = await fetch(API_URL);
+    
+    if (!response.ok) {
+      throw new Error('Erro ao buscar produtos do servidor');
+    }
+
+    const produtos = await response.json();
+
+    // Se não houver produtos no banco
+    if (produtos.length === 0) {
+      gridProdutos.innerHTML = '<p class="col-span-full text-center text-gray-500 py-10">Nenhuma camisa disponível no momento.</p>';
+      return;
+    }
+
+    // Limpa o grid para colocar os produtos reais
+    gridProdutos.innerHTML = '';
+
+    // Loop para criar o HTML de cada produto dinamicamente
+    produtos.forEach(produto => {
+      // Trata o preço caso venha como número do banco de dados
+      const precoFormatado = Number(produto.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      
+      // Usa uma imagem padrão caso o produto não tenha imagem_url no Supabase
+      const imagemUrl = produto.imagem_url || 'https://via.placeholder.com/300x400?text=Camisa';
+
+      const cardHTML = `
+        <div class="bg-white border border-gray-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative cursor-pointer" onclick="showPage('produto')">
+          <button data-fav onclick="toggleFav(event, this)" class="absolute top-2 right-2 z-10 bg-white p-1.5 rounded-full shadow text-gray-400 hover:text-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </svg>
+          </button>
+          
+          <div class="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
+            <img src="${imagemUrl}" alt="${produto.nome}" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+          </div>
+
+          <div class="p-3">
+            <span class="text-xs text-gray-muted uppercase tracking-wider font-medium">Camisa</span>
+            <h3 class="text-sm font-semibold text-gray-900 mt-0.5 line-clamp-1">${produto.nome}</h3>
+            <p class="text-xs text-gray-muted line-clamp-1 mt-0.5">${produto.descricao || ''}</p>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-base font-bold text-brand">${precoFormatado}</span>
+              <span class="text-[10px] text-gray-muted bg-gray-100 px-1.5 py-0.5 rounded font-medium">PIX ou Cartão</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Insere o card estruturado dentro do grid
+      gridProdutos.insertAdjacentHTML('beforeend', cardHTML);
+    });
+
+  } catch (error) {
+    console.error('Erro na conexão:', error);
+    gridProdutos.innerHTML = `<p class="col-span-full text-center text-red-500 py-10">Não foi possível carregar os produtos: ${error.message}</p>`;
+    
+  }
+}
+
+// Executa a busca assim que a página terminar de carregar o HTML
+document.addEventListener('DOMContentLoaded', carregarProdutosDoBackend);
+
+
 </script>
 </body>
 </html>
