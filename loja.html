@@ -15,6 +15,8 @@
     .banner-slide.active { display: block; }
     .filter-body { display: block; }
     [data-fav].faved svg { fill: #1D4FFE; stroke: #1D4FFE; }
+    /* Debug panel for API responses */
+    #api-debug { background: #ffffff; border: 1px solid #e6e6e6; padding: 12px; max-height: 220px; overflow: auto; font-size: 12px; color:#111; margin:12px 6px; white-space:pre-wrap; display:block; }
   </style>
   <script>
     tailwind.config = {
@@ -82,6 +84,9 @@
     <a href="#" class="block px-6 py-5 text-[#7F7F7F] text-lg hover:bg-gray-50">Contato</a>
   </div>
 </header>
+
+<!-- Debug: API response (visível para diagnóstico) -->
+<pre id="api-debug">Painel de debug: aguardando resposta da API...</pre>
 
 <!-- ========== PAGE: HOME ========== -->
 <div id="page-home" class="page active">
@@ -162,7 +167,7 @@
             <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
           </button>
           <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1"/><path d="M3 9l4-4 4 4 4-4 4 4" stroke-width="1"/></svg>
+            <img src="assets/images/products/camiseta-react-preta.png" alt="Produto Premium A" class="w-full h-full rounded-lg object-cover" />
           </div>
           <p class="font-bold text-black text-base">Produto Premium A</p>
           <p class="font-bold text-[#1D4FFE] text-xl mt-1">R$ 299,90</p>
@@ -173,7 +178,7 @@
             <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
           </button>
           <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="1"/><path d="M12 7v5l3 3" stroke-width="1"/></svg>
+            <img src="assets/images/products/camiseta-js.png" alt="Produto Especial B" class="w-full h-full rounded-lg object-cover" />
           </div>
           <p class="font-bold text-black text-base">Produto Especial B</p>
           <p class="text-[#7F7F7F] text-sm line-through">R$ 199,90</p>
@@ -185,7 +190,7 @@
             <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
           </button>
           <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" stroke-width="1"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke-width="1"/></svg>
+            <img src="assets/images/products/camiseta-react-azul.png" alt="Produto Elite C" class="w-full h-full rounded-lg object-cover" />
           </div>
           <p class="font-bold text-black text-base">Produto Elite C</p>
           <p class="font-bold text-[#1D4FFE] text-xl mt-1">R$ 459,00</p>
@@ -196,7 +201,7 @@
             <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
           </button>
           <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-width="1"/></svg>
+            <img src="assets/images/products/camiseta-css.png" alt="Produto Top D" class="w-full h-full rounded-lg object-cover" />
           </div>
           <p class="font-bold text-black text-base">Produto Top D</p>
           <p class="text-[#7F7F7F] text-sm line-through">R$ 320,00</p>
@@ -332,14 +337,14 @@
         <!-- 6 Product cards -->
         <div onclick="goTo('product')" class="bg-white border border-[#D9D9D9] rounded-xl p-5 relative cursor-pointer hover:shadow-md transition-shadow">
           <button data-fav class="absolute right-4 top-4 w-9 h-9 border border-[#B7B7B7] rounded flex items-center justify-center bg-white z-10" onclick="toggleFav(event, this)"><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
-          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><svg class="w-14 h-14 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1"/></svg></div>
+          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><img src="assets/images/products/camiseta-laravel-preta.png" alt="Produto 01" class="w-full h-full rounded-lg object-cover"/></div>
           <p class="font-bold text-black">Produto 01</p>
           <p class="font-bold text-[#1D4FFE] text-xl mt-1">R$ 199,90</p>
           <p class="text-[#7F7F7F] text-sm">10x de R$ 19,99</p>
         </div>
         <div onclick="goTo('product')" class="bg-white border border-[#D9D9D9] rounded-xl p-5 relative cursor-pointer hover:shadow-md transition-shadow">
           <button data-fav class="absolute right-4 top-4 w-9 h-9 border border-[#B7B7B7] rounded flex items-center justify-center bg-white z-10" onclick="toggleFav(event, this)"><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
-          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><svg class="w-14 h-14 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="1"/></svg></div>
+          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><img src="assets/images/products/camiseta-node.png" alt="Produto 02" class="w-full h-full rounded-lg object-cover"/></div>
           <p class="font-bold text-black">Produto 02</p>
           <p class="text-[#7F7F7F] text-sm line-through">R$ 299,00</p>
           <p class="font-bold text-[#1D4FFE] text-xl">R$ 229,90</p>
@@ -347,21 +352,21 @@
         </div>
         <div onclick="goTo('product')" class="bg-white border border-[#D9D9D9] rounded-xl p-5 relative cursor-pointer hover:shadow-md transition-shadow">
           <button data-fav class="absolute right-4 top-4 w-9 h-9 border border-[#B7B7B7] rounded flex items-center justify-center bg-white z-10" onclick="toggleFav(event, this)"><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
-          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><svg class="w-14 h-14 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-width="1"/></svg></div>
+          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><img src="assets/images/products/camiseta-php.png" alt="Produto 03" class="w-full h-full rounded-lg object-cover"/></div>
           <p class="font-bold text-black">Produto 03</p>
           <p class="font-bold text-[#1D4FFE] text-xl mt-1">R$ 89,90</p>
           <p class="text-[#7F7F7F] text-sm">6x de R$ 14,98</p>
         </div>
         <div onclick="goTo('product')" class="bg-white border border-[#D9D9D9] rounded-xl p-5 relative cursor-pointer hover:shadow-md transition-shadow">
           <button data-fav class="absolute right-4 top-4 w-9 h-9 border border-[#B7B7B7] rounded flex items-center justify-center bg-white z-10" onclick="toggleFav(event, this)"><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
-          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><svg class="w-14 h-14 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" stroke-width="1"/></svg></div>
+          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><img src="assets/images/products/camiseta-laravel-azul.png" alt="Produto 04" class="w-full h-full rounded-lg object-cover"/></div>
           <p class="font-bold text-black">Produto 04</p>
           <p class="font-bold text-[#1D4FFE] text-xl mt-1">R$ 349,00</p>
           <p class="text-[#7F7F7F] text-sm">12x de R$ 29,08</p>
         </div>
         <div onclick="goTo('product')" class="bg-white border border-[#D9D9D9] rounded-xl p-5 relative cursor-pointer hover:shadow-md transition-shadow">
           <button data-fav class="absolute right-4 top-4 w-9 h-9 border border-[#B7B7B7] rounded flex items-center justify-center bg-white z-10" onclick="toggleFav(event, this)"><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
-          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><svg class="w-14 h-14 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke-width="1"/></svg></div>
+          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><img src="assets/images/products/camiseta-php-grafite.png" alt="Produto 05" class="w-full h-full rounded-lg object-cover"/></div>
           <p class="font-bold text-black">Produto 05</p>
           <p class="text-[#7F7F7F] text-sm line-through">R$ 150,00</p>
           <p class="font-bold text-[#1D4FFE] text-xl">R$ 119,90</p>
@@ -369,7 +374,7 @@
         </div>
         <div onclick="goTo('product')" class="bg-white border border-[#D9D9D9] rounded-xl p-5 relative cursor-pointer hover:shadow-md transition-shadow">
           <button data-fav class="absolute right-4 top-4 w-9 h-9 border border-[#B7B7B7] rounded flex items-center justify-center bg-white z-10" onclick="toggleFav(event, this)"><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
-          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><svg class="w-14 h-14 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke-width="1"/></svg></div>
+          <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4"><img src="assets/images/products/camiseta-react-cinza.png" alt="Produto 06" class="w-full h-full rounded-lg object-cover"/></div>
           <p class="font-bold text-black">Produto 06</p>
           <p class="font-bold text-[#1D4FFE] text-xl mt-1">R$ 499,90</p>
           <p class="text-[#7F7F7F] text-sm">12x de R$ 41,65</p>
@@ -396,13 +401,13 @@
       <!-- Photo -->
       <div class="lg:max-w-sm w-full">
         <div class="bg-white border border-[#D9D9D9] rounded-lg flex items-center justify-center p-10 aspect-square">
-          <svg class="w-48 h-48 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="0.5"/><path d="M3 9l4-4 4 4 4-4 4 4" stroke-width="0.5"/><path d="M3 15l4-4 4 4 4-4 4 4" stroke-width="0.5"/></svg>
+          <img id="main-product-img" src="assets/images/products/camiseta-react-preta.png" alt="Produto Premium A" class="w-full h-full object-contain" />
         </div>
         <!-- Thumbnails -->
         <div class="flex gap-3 mt-3">
-          <div class="w-16 h-16 border-2 border-[#1D4FFE] rounded bg-white flex items-center justify-center cursor-pointer"><svg class="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1"/></svg></div>
-          <div class="w-16 h-16 border border-[#D9D9D9] rounded bg-white flex items-center justify-center cursor-pointer hover:border-[#1D4FFE] transition-colors"><svg class="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="1"/></svg></div>
-          <div class="w-16 h-16 border border-[#D9D9D9] rounded bg-white flex items-center justify-center cursor-pointer hover:border-[#1D4FFE] transition-colors"><svg class="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-width="1"/></svg></div>
+          <div class="w-16 h-16 border-2 border-[#1D4FFE] rounded bg-white flex items-center justify-center cursor-pointer"><img src="assets/images/products/camiseta-react-preta.png" alt="Mini 1" class="w-full h-full object-contain"/></div>
+          <div class="w-16 h-16 border border-[#D9D9D9] rounded bg-white flex items-center justify-center cursor-pointer hover:border-[#1D4FFE] transition-colors"><img src="assets/images/products/camiseta-react-cinza.png" alt="Mini 2" class="w-full h-full object-contain"/></div>
+          <div class="w-16 h-16 border border-[#D9D9D9] rounded bg-white flex items-center justify-center cursor-pointer hover:border-[#1D4FFE] transition-colors"><img src="assets/images/products/camiseta-js.png" alt="Mini 3" class="w-full h-full object-contain"/></div>
         </div>
       </div>
 
@@ -743,27 +748,80 @@
     if (val < 1) val = 1;
     display.textContent = val;
   }
-
   // URL da sua API na Vercel
 const API_URL = 'https://lojacamisasbackend-euf4.vercel.app/api/produtos';
 
 // Função que busca os produtos do backend e renderiza na tela
 async function carregarProdutosDoBackend() {
-  const gridProdutos = document.getElementById('grid-produtos');
+  // Seleciona o container dinâmico (compatível com ids antigos)
+  const gridProdutos = document.getElementById('products-list') || document.getElementById('grid-produtos');
+  const destaquesEl = document.getElementById('destaques-list');
   
-  if (!gridProdutos) return; // Garante que o elemento existe na tela atual
+  if (!gridProdutos && !destaquesEl) return; // Não há onde renderizar
 
   // Exibe uma mensagem de carregamento opcional
-  gridProdutos.innerHTML = '<p class="col-span-full text-center text-gray-500 py-10">Carregando camisas...</p>';
+  if (gridProdutos) gridProdutos.innerHTML = '<p class="col-span-full text-center text-gray-500 py-10">Carregando camisas...</p>';
+  if (destaquesEl) destaquesEl.innerHTML = '<p class="col-span-full text-center text-gray-500 py-10">Carregando...</p>';
 
   try {
     const response = await fetch(API_URL);
-    
+    console.log('Produtos API URL:', API_URL, 'status:', response.status, response.statusText);
+    try {
+      const raw = await response.clone().text();
+      console.log('Resposta bruta da API:', raw);
+    } catch (e) {
+      console.warn('Não foi possível ler a resposta bruta:', e);
+    }
+
     if (!response.ok) {
-      throw new Error('Erro ao buscar produtos do servidor');
+      throw new Error(`Erro ao buscar produtos do servidor: ${response.status} ${response.statusText}`);
     }
 
     const produtos = await response.json();
+
+    // If API returned no products, try Supabase REST as fallback to verify data
+    if ((!produtos || produtos.length === 0)) {
+      console.warn('API Vercel retornou vazio — tentando Supabase direto como fallback');
+      try {
+        const SUPABASE_URL = 'https://fqswufmcrdhufippvihg.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_TLT1SzwNGGd999nvAvc12g_-ZWGajUC';
+        const supResp = await fetch(`${SUPABASE_URL}/rest/v1/produtos?select=*`, {
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json'
+          }
+        });
+        console.log('Supabase fallback status:', supResp.status);
+        if (supResp.ok) {
+          const supProdutos = await supResp.json();
+          if (supProdutos && supProdutos.length > 0) {
+            // show supabase result in debug panel and use it
+            const debugEl = document.getElementById('api-debug');
+            if (debugEl) debugEl.textContent = 'Fallback Supabase:\n' + JSON.stringify(supProdutos, null, 2);
+            window.PRODUTOS_LOADED = supProdutos;
+            if (gridProdutos) gridProdutos.innerHTML = '';
+            if (destaquesEl) destaquesEl.innerHTML = '';
+            supProdutos.forEach((produto, idx) => {
+              const precoFormatado = Number(produto.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+              const imagemUrl = produto.imagem_url || 'https://via.placeholder.com/300x400?text=Camisa';
+              const cardHTML = `\n        <div class="bg-white border border-gray-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative cursor-pointer" onclick="openProduct(${idx})">\n          <button data-fav onclick="toggleFav(event, this)" class="absolute top-2 right-2 z-10 bg-white p-1.5 rounded-full shadow text-gray-400 hover:text-brand">...</button>\n          <div class="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">\n            <img src="${imagemUrl}" alt="${produto.nome}" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">\n          </div>\n          <div class="p-3">\n            <span class="text-xs text-gray-muted uppercase tracking-wider font-medium">Camisa</span>\n            <h3 class="text-sm font-semibold text-gray-900 mt-0.5 line-clamp-1">${produto.nome}</h3>\n            <p class="text-xs text-gray-muted line-clamp-1 mt-0.5">${produto.descricao || ''}</p>\n            <div class="mt-2 flex items-center justify-between">\n              <span class="text-base font-bold text-brand">${precoFormatado}</span>\n              <span class="text-[10px] text-gray-muted bg-gray-100 px-1.5 py-0.5 rounded font-medium">PIX ou Cartão</span>\n            </div>\n          </div>\n        </div>\n      `;
+              if (gridProdutos) gridProdutos.insertAdjacentHTML('beforeend', cardHTML);
+              if (destaquesEl && idx < 4) destaquesEl.insertAdjacentHTML('beforeend', cardHTML);
+            });
+            return; // already rendered from supabase fallback
+          }
+        }
+      } catch (e) {
+        console.error('Erro no fallback Supabase:', e);
+      }
+    }
+
+    // Preenche o painel de debug visual com o JSON retornado
+    const debugEl = document.getElementById('api-debug');
+    if (debugEl) {
+      try { debugEl.textContent = JSON.stringify(produtos, null, 2); } catch (e) { debugEl.textContent = String(produtos); }
+    }
 
     // Se não houver produtos no banco
     if (produtos.length === 0) {
@@ -771,11 +829,15 @@ async function carregarProdutosDoBackend() {
       return;
     }
 
-    // Limpa o grid para colocar os produtos reais
-    gridProdutos.innerHTML = '';
+    // Limpa os containers para colocar os produtos reais
+    if (gridProdutos) gridProdutos.innerHTML = '';
+    if (destaquesEl) destaquesEl.innerHTML = '';
+
+    // Guarda globalmente para poder abrir produto pelo índice
+    window.PRODUTOS_LOADED = produtos;
 
     // Loop para criar o HTML de cada produto dinamicamente
-    produtos.forEach(produto => {
+    produtos.forEach((produto, idx) => {
       // Trata o preço caso venha como número do banco de dados
       const precoFormatado = Number(produto.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
       
@@ -783,7 +845,7 @@ async function carregarProdutosDoBackend() {
       const imagemUrl = produto.imagem_url || 'https://via.placeholder.com/300x400?text=Camisa';
 
       const cardHTML = `
-        <div class="bg-white border border-gray-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative cursor-pointer" onclick="showPage('produto')">
+        <div class="bg-white border border-gray-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative cursor-pointer" onclick="openProduct(${idx})">
           <button data-fav onclick="toggleFav(event, this)" class="absolute top-2 right-2 z-10 bg-white p-1.5 rounded-full shadow text-gray-400 hover:text-brand">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
@@ -806,20 +868,122 @@ async function carregarProdutosDoBackend() {
         </div>
       `;
 
-      // Insere o card estruturado dentro do grid
-      gridProdutos.insertAdjacentHTML('beforeend', cardHTML);
+      // Insere o card estruturado dentro do grid principal
+      if (gridProdutos) gridProdutos.insertAdjacentHTML('beforeend', cardHTML);
+
+      // Também insere nos destaques (primeiros 4)
+      if (destaquesEl && idx < 4) {
+        destaquesEl.insertAdjacentHTML('beforeend', cardHTML);
+      }
     });
 
   } catch (error) {
     console.error('Erro na conexão:', error);
     gridProdutos.innerHTML = `<p class="col-span-full text-center text-red-500 py-10">Não foi possível carregar os produtos: ${error.message}</p>`;
-    
+    const debugEl = document.getElementById('api-debug');
+    if (debugEl) debugEl.textContent = 'Erro: ' + (error.message || String(error));
   }
 }
 
 // Executa a busca assim que a página terminar de carregar o HTML
 document.addEventListener('DOMContentLoaded', carregarProdutosDoBackend);
 
+// Abre o produto selecionado: salva no localStorage e troca para a página de produto
+function openProduct(index) {
+  const produtos = window.PRODUTOS_LOADED || [];
+  const p = produtos[index];
+  if (!p) return;
+  try { localStorage.setItem('selectedProduct', JSON.stringify(p)); } catch (e) { console.warn(e); }
+  goTo('product');
+  // Preenche a página de produto imediatamente quando disponível
+  setTimeout(populateProductPageFromStorage, 50);
+}
+
+// Preenche a página de produto (`#page-product`) com os dados salvos em localStorage
+function populateProductPageFromStorage() {
+  const raw = localStorage.getItem('selectedProduct');
+  if (!raw) return;
+  let p; try { p = JSON.parse(raw); } catch (e) { return; }
+  const page = document.getElementById('page-product');
+  if (!page) return;
+  const img = page.querySelector('#main-product-img');
+  if (img && p.imagem_url) img.src = p.imagem_url;
+  const title = page.querySelector('h1');
+  if (title && p.nome) title.textContent = p.nome;
+  const sku = page.querySelector('.text-xs');
+  if (sku) sku.textContent = p.sku || p.id || sku.textContent;
+  const priceEl = page.querySelector('.text-5xl');
+  if (priceEl && p.preco) priceEl.textContent = Number(p.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  const desc = page.querySelector('#desc-body p');
+  if (desc) desc.textContent = p.descricao || '';
+}
+
+// TEMP: injeta produtos de teste se nenhuma fonte de dados retornar produtos
+function injectTestProducts() {
+  const sample = [
+    { id: 't1', nome: 'Camisa Teste A', preco: 49.9, descricao: 'Produto de teste A', imagem_url: 'assets/images/products/camiseta-js.png' },
+    { id: 't2', nome: 'Camisa Teste B', preco: 79.9, descricao: 'Produto de teste B', imagem_url: 'assets/images/products/camiseta-css.png' }
+  ];
+  const gridProdutos = document.getElementById('products-list') || document.getElementById('grid-produtos');
+  const destaquesEl = document.getElementById('destaques-list');
+  if (!gridProdutos) return;
+  window.PRODUTOS_LOADED = sample;
+  gridProdutos.innerHTML = '';
+  if (destaquesEl) destaquesEl.innerHTML = '';
+  sample.forEach((produto, idx) => {
+    const precoFormatado = Number(produto.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const cardHTML = `
+      <div class="bg-white border border-gray-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative cursor-pointer" onclick="openProduct(${idx})">
+        <div class="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
+          <img src="${produto.imagem_url}" alt="${produto.nome}" class="w-full h-full object-cover object-top">
+        </div>
+        <div class="p-3">
+          <h3 class="text-sm font-semibold text-gray-900 mt-0.5">${produto.nome}</h3>
+          <div class="mt-2 flex items-center justify-between"><span class="text-base font-bold text-brand">${precoFormatado}</span></div>
+        </div>
+      </div>
+    `;
+    gridProdutos.insertAdjacentHTML('beforeend', cardHTML);
+    if (destaquesEl && idx < 4) destaquesEl.insertAdjacentHTML('beforeend', cardHTML);
+  });
+  const debugEl = document.getElementById('api-debug'); if (debugEl) debugEl.textContent = 'Produtos de teste injetados (temporário).';
+}
+
+// Verifica após 1.2s se não há produtos e injeta testes (temporário)
+setTimeout(() => {
+  const p = window.PRODUTOS_LOADED;
+  if (!p || (Array.isArray(p) && p.length === 0)) {
+    injectTestProducts();
+  }
+}, 1200);
+
+// Global error handlers to surface JS errors in the debug panel
+window.addEventListener('error', function (ev) {
+  const debugEl = document.getElementById('api-debug');
+  const msg = `Error: ${ev.message} at ${ev.filename}:${ev.lineno}:${ev.colno}`;
+  console.error(msg, ev.error);
+  if (debugEl) debugEl.textContent = (debugEl.textContent || '') + "\n\n[JS ERROR] " + msg + (ev.error ? '\n' + ev.error.stack : '');
+});
+
+window.addEventListener('unhandledrejection', function (ev) {
+  const debugEl = document.getElementById('api-debug');
+  const msg = `UnhandledRejection: ${ev.reason && ev.reason.message ? ev.reason.message : String(ev.reason)}`;
+  console.error('UnhandledRejection', ev.reason);
+  if (debugEl) debugEl.textContent = (debugEl.textContent || '') + "\n\n[UNHANDLED REJECTION] " + msg;
+});
+
+// Quando a página de produto for ativada, tenta preencher os dados
+document.addEventListener('DOMContentLoaded', () => {
+  // Preenche caso já exista produto selecionado
+  populateProductPageFromStorage();
+  // Quando navegar para a página 'product', atualiza o conteúdo
+  const observer = new MutationObserver(() => {
+    if (document.getElementById('page-product').classList.contains('active')) {
+      populateProductPageFromStorage();
+    }
+  });
+  observer.observe(document.body, { attributes: true, childList: true, subtree: true });
+});
 
 </script>
 </body>
